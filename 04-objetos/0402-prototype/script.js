@@ -3,11 +3,28 @@
 // Crie um método no protótipo que retorne
 // o nome completo da pessoa
 
+  function Pessoas(nome, sobrenome, idade){
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+    this.idade = idade;
+  }
+
+  Pessoas.prototype.nomeCompleto = function(){
+    return `${this.nome} ${this.sobrenome}`
+  }
+
+
+  const lidia = new Pessoas('Lídia', 'Fernandes', 31);
+
+
+
+
 
 
 // Liste os métodos acessados por 
 // dados criados com NodeList,
 // HTMLCollection, Document
+
 
 
 // Liste os construtores dos dados abaixo
