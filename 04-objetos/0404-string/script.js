@@ -40,9 +40,9 @@ console.log(recebimentoTotal)
 
 // Retorne uma array com a lista abaixo
 const transportes = 'Carro;Avião;Trem;Ônibus;Bicicleta';
+const arrayTransportes = transportes.split(';')
+console.log(arrayTransportes)
 
-const arrayTransportes = transportes.split(';');
-console.log(arrayTransportes);
 
 // Substitua todos os span's por a's
 let html = `<ul>
@@ -51,24 +51,39 @@ let html = `<ul>
                 <li><span>Contato</span></li>
               </ul>`;
 
-html = html.split('span').join('a');
-
-console.log(html);
+html = html.split('span').join('a')
+console.log(html)
 
 // Retorne o último caracter da frase
 const frase = 'Melhor do ano!';
 
-console.log(frase.slice(-1));
-
+console.log(frase.slice(-1))
 // Retorne o total de taxas
 const transacoes2 = ['Taxa do Banco', '   TAXA DO PÃO', '  taxa do mercado', 'depósito Bancário', 'TARIFA especial'];
 
-let taxasTotal = 0;
-transacoes2.forEach((item) => {
-  item = item.toLowerCase().trim().slice(0,4);
+let taxas = 0;
 
-  if(item === 'taxa')
-    taxasTotal++
+transacoes2.forEach((item) =>{
+  item = item.toLocaleLowerCase().trim().slice(0, 4)
+  if(item === 'taxa'){
+    taxas++;
+  }
+
 })
 
-console.log(taxasTotal)
+console.log(taxas)
+//todos esses módulos n estnão alterando a string
+//charAt(numero do caracter)
+//oque.concat(no que)
+//includes - procura na string (o que , index)
+//startWidth 
+//endWith
+//slice(index start, index end) números negativos tbm
+//substring(start, end)
+//indexOf(search) retorna index
+//lastIndexOf(search) retorna index
+//padStart(n, Str - com o q) preenche o espaço até ocupar todo o espaço ocupado pelo caracter solicitado
+//repeat(quantas vzs)
+//replace - dois valores
+//split(onde quebrar e tirar) retorna array
+//trim, trimeStart, trimEnd
