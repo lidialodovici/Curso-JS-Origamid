@@ -4,26 +4,27 @@ const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão'];
 // Adicione 'Arroz' ao final da array
 // Adicione 'Peixe' e 'Batata' ao início da array
 
-
-const primeiroValor = comidas.shift();
-const ultimoValor = comidas.pop();
-
-comidas.push('Arroz');
-comidas.unshift('Peixe', 'Batata');
-
-console.log(primeiroValor)
-console.log(ultimoValor)
+let firstElement = comidas.shift()
+let lastElement = comidas.pop()
+console.log(firstElement)
+console.log(lastElement)
+comidas.push('Arroz')
+comidas.unshift('Peixe', 'Batata')
+//comidas.splice(0, 0, 'Peixe', 'Batata')
 console.log(comidas)
+
+
+
 
 const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
 // Arrume os estudantes em ordem alfabética
 // Inverta a ordem dos estudantes
 // Verifique se Joana faz parte dos estudantes
 // Verifique se Juliana faz parte dos estudantes
-estudantes.sort();
-estudantes.reverse();
 
-console.log(estudantes);
+estudantes.sort()
+estudantes.reverse()
+console.log(estudantes)
 console.log(estudantes.includes('Joana'))
 console.log(estudantes.includes('Juliana'))
 
@@ -35,15 +36,16 @@ let html = `<section>
             </section>`
 // Substitua section por ul e div com li,
 // utilizando split e join
-html = html.split('section').join('ul').split('div').join('li');
+console.log(html)
+html = html.split('section').join('ul').split('div').join('li')
 console.log(html)
 
 const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
 // Remova o último carro, mas antes de remover
 // salve a array original em outra variável
-const carrosCopia = carros.slice();
+const carrosClone = carros.slice()
 
-carros.pop();
+carrosClone.pop()
+console.log(carros)
+console.log(carrosClone)
 
-console.log(carros);
-console.log(carrosCopia);
