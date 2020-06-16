@@ -1,41 +1,46 @@
 // Selecione cada curso e retorne uma array
 // com objetos contendo o título, descricao,
 // aulas e horas de cada curso
-const cursos = document.querySelectorAll('.curso');
-const arrayCursos = Array.from(cursos);
+const cursos = document.querySelectorAll('.curso')
+const arrayCursos = Array.from(cursos)
 
-const objetosCurso = arrayCursos.map((curso) => {
+
+const objCursos = arrayCursos.map((curso) => {
   const titulo = curso.querySelector('h1').innerText;
-  const descricao = curso.querySelector('p').innerText;
-  const aulas = curso.querySelector('.aulas').innerText;
-  const horas = curso.querySelector('.horas').innerText;
+  const descricao = curso.querySelector('p').innerText
+  const aulas = curso.querySelector('.aulas').innerText
+  const horas = curso.querySelector('.horas').innerText
   return {
+    //quando o nome da prop é igual do valor
+    //titulo: titulo,
     titulo,
     descricao,
     aulas,
-    horas
+    horas,
   }
 })
 
-console.log(objetosCurso);
-console.log(arrayCursos);
+console.log(objCursos)
 
+//array nova continua intacta
 
 // Retorne uma lista com os
 // números maiores que 100
 const numeros = [3, 44, 333, 23, 122, 322, 33];
-const maioresQue100 = numeros.filter(n => n > 100);
 
-console.log(maioresQue100)
+const maiores100 = numeros.filter(item => item > 100)
+console.log(maiores100)
 
 // Verifique se Baixo faz parte
 // da lista de instrumentos e retorne true
-const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
-const possuiBaixo = instrumentos.some((item) => {
-  return item === 'Baixo';
+const instrumentos = ['Guitarra','Baixo', 'Bateria', 'Teclado']
+
+const temBaixo = instrumentos.some((item) =>{
+  return item ==='Baixo'
 })
 
-console.log(possuiBaixo);
+console.log(temBaixo)
+
 
 // Retorne o valor total das compras
 const compras = [
@@ -65,9 +70,32 @@ const compras = [
   }
 ]
 
-const valorTotal = compras.reduce((acumulador, item) => {
-  const precoLimpo = +item.preco.replace('R$ ', '').replace(',', '.');
-  return acumulador + precoLimpo;
+
+const valorTotal = compras.reduce((acumulador, item) =>{
+  const preco = +item.preco.replace('R$', '').trim().replace(',','.');
+  return acumulador + preco;
 }, 0)
 
-console.log(valorTotal);
+console.log(valorTotal)
+
+
+
+
+/* COMO EU TINHA FEITO
+const somatoria = compras.map((item, index)=> {
+  const valores = item.preco.replace('R$', '').trim()
+  return valores
+
+})
+//console.log(somatoria)
+
+const total = somatoria.reduce((acumulador, valorAtual, index) =>{
+  const prices = parseFloat(valorAtual)
+  console.log(prices)
+  const xeque = acumulador + prices
+  return xeque
+}, 0)
+
+console.log(total)
+
+*/
