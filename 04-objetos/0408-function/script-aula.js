@@ -101,3 +101,5 @@ const acelerarHonda = carro.acelerar.bind(honda, 100);
 console.log(acelerarHonda(30))
 
 // console.log(carro)
+
+

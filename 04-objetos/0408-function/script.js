@@ -32,3 +32,15 @@ const cursosJS = h1Titulo('Cursos de JavaScript')
 const cursosHTML = h1Titulo('Cursos de HTML')
 
 console.log(cursosJS, cursosHTML)
+
+
+
+//teste
+//window.marca = 'Honda'
+//window.ano = 2010
+
+function descricaoCarro(velocidade){
+  console.log(this.marca + ' ' + this.ano + ' tem velocidade máxima de ' + velocidade)
+}
+
+descricaoCarro.call({marca: 'Honda', ano: 2020}, 150);
