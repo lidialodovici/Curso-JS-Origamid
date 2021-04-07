@@ -2,6 +2,13 @@
 // data-anime="show-right" a todos as section's
 // com descricão dos animais.
 
+//seleciona
+//forEach - item -> item.classList.add
+
+
+
+
+
 // Utilizando estes atributos, adicione a classe
 // show-down ou show-right a sua respectiva section
 // assim que a mesma aparecer na tela (animacao tab)

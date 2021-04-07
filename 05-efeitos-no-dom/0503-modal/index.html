@@ -144,6 +144,21 @@
       </form>
     </div>
   </section>
+
+  <script>
+    'use strict'
+    //NÃO ESTA DENTRO DE NADA, FAZ REFERENCIA A WINDOW
+    function aqui(){
+      console.log(this)
+    }
+
+    aqui()
+
+    delete Array.prototype
+
+    const arguments = 3.14;
+
+  </script>
   <script type="module" src="js/script.js"></script>  
 </body>
 </html>

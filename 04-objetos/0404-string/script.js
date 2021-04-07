@@ -26,22 +26,26 @@ const transacoes = [
 
 let taxaTotal = 0;
 let recebimentoTotal = 0;
-transacoes.forEach((item) => {
-  const numeroLimpo = +item.valor.replace('R$ ', '');
-  if (item.descricao.slice(0, 4) === 'Taxa') {
-    taxaTotal += numeroLimpo;
-  } else if(item.descricao.slice(0, 4) === 'Rece') {
-    recebimentoTotal += numeroLimpo;
+
+transacoes.forEach((item) =>{
+  const valor = +item.valor.replace('R$', ' ')
+  if(item.descricao.slice(0,4) === 'Taxa'){
+    taxaTotal = taxaTotal + valor
+  }else{
+    recebimentoTotal = recebimentoTotal + valor
   }
 })
+
 console.log(taxaTotal)
 console.log(recebimentoTotal)
 
-
 // Retorne uma array com a lista abaixo
 const transportes = 'Carro;Avião;Trem;Ônibus;Bicicleta';
-const arrayTransportes = transportes.split(';')
-console.log(arrayTransportes)
+
+const listaTransportes = transportes.split(';')
+
+console.log(listaTransportes)
+
 
 
 // Substitua todos os span's por a's
@@ -51,27 +55,33 @@ let html = `<ul>
                 <li><span>Contato</span></li>
               </ul>`;
 
-html = html.split('span').join('a')
-console.log(html)
-
+//let html = html.split('span').join('a');
+//console.log(html)
 // Retorne o último caracter da frase
 const frase = 'Melhor do ano!';
-
+console.log(frase[frase.length - 1])
 console.log(frase.slice(-1))
+
+
 // Retorne o total de taxas
 const transacoes2 = ['Taxa do Banco', '   TAXA DO PÃO', '  taxa do mercado', 'depósito Bancário', 'TARIFA especial'];
 
-let taxas = 0;
 
+let taxasTotal = 0;
 transacoes2.forEach((item) =>{
-  item = item.toLocaleLowerCase().trim().slice(0, 4)
-  if(item === 'taxa'){
-    taxas++;
+  taxas = item.toLowerCase().trim().slice(0, 4)
+  if(taxasTotal === 'taxa'){
+    taxasTotal++;
   }
-
 })
 
-console.log(taxas)
+
+console.log(taxasTotal)
+
+
+
+
+
 //todos esses módulos n estnão alterando a string
 //charAt(numero do caracter)
 //oque.concat(no que)
