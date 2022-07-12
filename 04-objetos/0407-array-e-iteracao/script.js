@@ -1,22 +1,25 @@
 // Selecione cada curso e retorne uma array
 // com objetos contendo o título, descricao,
 // aulas e horas de cada curso
-const aulas = document.querySelectorAll('section')
+const cursos = document.querySelectorAll('.curso')
 //TRANSFORMAR EM ARRAY
-const listaAulas = Array.from(aulas)
+const listaCursos = Array.from(cursos)
 //SEMPRE QUE QUISER RETORNAR ARRAY - MAP()
-const objetosCursos = listaAulas.map((curso)=>{
-  const titulo = document.querySelector('h1').innerText;
-  const descricao = document.querySelector('p').innerText;
-  const aulas = document.querySelector('.aulas').innerText;
-  const horas = document.querySelector('.horas').innerText;
+const objetosCursos = listaCursos.map( (curso) =>{
+  const titulo = curso.querySelector('h1').innerText;
+  const descricao = curso.querySelector('p').innerText
+  const aulas = curso.querySelector('.aulas').innerText
+  const horas = curso.querySelector('.horas').innerText
+
   return{
-    //titulo: titulo,
+    //titulo: titulo, -> qdo tem o mesmo nome
     titulo,
     descricao,
     aulas,
     horas,
   }
+
+
 })
 
 console.log(objetosCursos)
@@ -26,22 +29,14 @@ console.log(objetosCursos)
 // Retorne uma lista com os
 // números maiores que 100
 const numeros = [3, 44, 333, 23, 122, 322, 33];
-
-const maioresQue100 = numeros.filter(numero => numero > 100)
-
-console.log(maioresQue100)
+const maior100 = numeros.filter(num => {return num >= 100});
+console.log(maior100)
 
 // Verifique se Baixo faz parte
 // da lista de instrumentos e retorne true
 const instrumentos = ['Guitarra','Baixo', 'Bateria', 'Teclado']
-
-const temBaixo = instrumentos.some((instrumento) => instrumento === 'Baixo' ? true : false);
-
-console.log(temBaixo)
-
-
-
-
+const baixo = instrumentos.some( baixo => {return baixo === 'Baixo' ? true : false } )
+console.log(baixo)
 // Retorne o valor total das compras
 const compras = [
   {
@@ -70,10 +65,17 @@ const compras = [
   }
 ]
 
-const valorTotal = compras.reduce((acc, item) =>{
-  const precoLimpo = +item.preco.replace('R$', '').replace(',', '.')
-  return acc + precoLimpo
-}, 0);
+
+const preco = compras.map((produto) =>{
+  return +produto.preco.split('R$').join('').trim().split(',').join('.')
+})
 
 
+const valorTotal = preco.reduce((acc, valorAtual) => {
+  return acc + valorAtual;
+});
+
+console.log(preco) 
 console.log(valorTotal)
+
+

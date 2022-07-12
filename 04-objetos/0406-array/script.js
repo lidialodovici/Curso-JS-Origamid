@@ -1,66 +1,32 @@
 const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão'];
 // Remova o primeiro valor de comidas e coloque em uma variável
+const primeiroValor = comidas.shift() /*or*/
 // Remova o último valor de comidas e coloque em uma variável
+const ultimoValor = comidas.pop()
+
 // Adicione 'Arroz' ao final da array
-// Adicione 'Peixe' e 'Batata' ao início da array
-
-//PRIMEIRA FORMA
-//const refeicao = comidas[0]
-const pratoPrimeiro = comidas.shift()
-const pratoFinal = comidas.pop()
-comidas.splice(2, 0, 'Arroz')
-comidas.unshift('Peixe', 'Batata')
-
-console.log(pratoPrimeiro)
-console.log(pratoFinal)
-
-//comidas.splice(0, 0, 'Peixe', 'Batata')
+comidas.push('Arroz')
 console.log(comidas)
-
-
-
+// Adicione 'Peixe' e 'Batata' ao início da array
+comidas.unshift('Peixe', 'Batata')
+console.log(comidas) //orrrrrr
+comidas.splice(0, 0, 'Feijão')
+console.log(comidas)
 
 
 const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
 // Arrume os estudantes em ordem alfabética
+estudantes.sort()
+console.log(estudantes)
 // Inverta a ordem dos estudantes
+estudantes.reverse()
+console.log(estudantes)
 // Verifique se Joana faz parte dos estudantes
+console.log(estudantes.includes('Joana'))
 // Verifique se Juliana faz parte dos estudantes
-
-console.log(estudantes.sort())
-console.log(estudantes.reverse())
-/*const valorJoana = function (){
-  if(estudantes.includes('Joana') === true){
-    return 'A array possui o nome Joana'
-  }else{
-    return 'A array não possui o nome Joana'
-  }
-}
-
-console.log(valorJoana())
-
-const valorJuliana = function(){
-  if(estudantes.includes('Juliana') === true){
-    return 'O nome Juliana consta na lista'
-  }else{
-    return 'O nome não consta na lista'
-  }
-}
-
-console.log(valorJuliana())*/
-
-function constaNome(nome){
-  if(estudantes.includes(nome) === true){
-    console.log('Este nome consta na lista')
-  }else{
-    console.log('Este nome não consta na lista')
-  }
-}
+console.log(estudantes.includes('Juliana'))
 
 
-/*estudantes.forEach(constaNome);*/
-
-console.log(constaNome('Juliana'))
 
 
 let html = `<section>
@@ -70,19 +36,18 @@ let html = `<section>
             </section>`
 // Substitua section por ul e div com li,
 // utilizando split e join
+html = html.split('section').join('ul').split('div').join('li')
+console.log(html)
 
 
 const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
 // Remova o último carro, mas antes de remover
 // salve a array original em outra variável
 
+const carrosAntigos = carros.slice()
+carros.pop()
+
+console.log(carros)
+console.log(carrosAntigos)
 
 
-
-let lista = document.querySelectorAll('li')
-
-let topics = Array.prototype.filter.call(lista, (item, index) => {
-  return item;
-})
-
-console.log(topics)
